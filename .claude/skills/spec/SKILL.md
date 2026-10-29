@@ -18,8 +18,9 @@ Ez a skill **csak dokumentumot** készít. Kódot és tesztet nem írsz, amíg a
    - Ha az eszköz nem érhető el, akkor tedd fel a kérdéseket számozott listában, mindegyikhez javasolt alapértelmezéssel.
 3. A válaszok után írd meg a `SPEC.md`-t **szakaszonként, látható haladással**, ne egyetlen nagy fájlírással (különben a felhasználó percekig csak egy pörgő jelzőt lát):
    - **Közvetlenül a válaszok után, mielőtt a tartalmon gondolkodnál**, írj ki egy nyugtázó sort a döntésekkel, pl. `✅ Rögzítettem: rendezés dátum szerint, … – indul a SPEC.md írása (11 szakasz).` Ez legyen az első, amit a felhasználó lát.
-   - **Ne tervezd meg előre fejben a teljes specet.** Minden szakaszt közvetlenül a megírása előtt, röviden gondolj végig. Az előre, egyben végiggondolt spec a legfőbb oka a hosszú csendnek.
-   - Ezután rögtön vegyél fel egy **feladatlistát** a beépített todo/feladatlista eszközzel, a sablon szakaszaival (1. Cél … 11. Változásnapló). Így a felületen látszik, hol tartasz.
+   - Utána írj ki egy **látható mini-tervet** (10–15 sor): a tervezett üzleti szabályok rövid címeit (SZ-01…) és a storyk listáját (S1… egy-egy sorban, MVP jelöléssel). Ez a váz, amihez a szakaszok igazodnak, és a felhasználó már itt szólhat, ha rossz az irány.
+   - **A részleteket ne tervezd meg előre fejben.** A mini-terv után minden szakaszt közvetlenül a megírása előtt, röviden gondolj végig. Az előre, egyben, csendben végiggondolt spec a legfőbb oka a hosszú várakozásnak. A konzisztenciát a 4. lépés ellenőrzése biztosítja.
+   - Ezután rögtön vegyél fel egy **feladatlistát** a beépített todo/feladatlista eszközzel, a sablon szakaszaival (1. Cél … 11. Változásnapló), a végén egy `🔎 Konzisztencia-ellenőrzés` sorral. Így a felületen látszik, hol tartasz.
    - Hozd létre a `SPEC.md` **vázát**: a fejléc (státusz, verzió, dátum) és a szakaszcímek, a szakaszok helyén `(készül…)` jelöléssel.
    - Ezután **szakaszonként** töltsd ki egy-egy kis szerkesztéssel. Minden szakasz előtt írj ki egy rövid státuszsort, pl. `✍️ 4/11 – Adatmodell`, utána pedig pipáld ki a feladatlistában.
    - A hosszú részt (Elfogadási kritériumok) 3–5 EK-s adagokban írd, az adagok között egy-egy státuszsorral (pl. `✍️ 7/11 – EK-01…EK-05`).
@@ -36,12 +37,20 @@ Ez a skill **csak dokumentumot** készít. Kódot és tesztet nem írsz, amíg a
      - Minden story után legyen böngészőben kipróbálható, működő állapot. A „Kész, ha…” oszlop konkrét nevekkel írja le, mit kell látni.
      - Az első storyk (kb. S1–S4) adjanak egy minimálisan használható változatot (MVP), a többi épüljön rájuk.
      - Egy storyban legfeljebb kb. 8 EK legyen, hogy egy kör áttekinthető maradjon.
-4. Írd ki röviden a felhasználónak:
+4. **🔎 Konzisztencia-ellenőrzés.** Írj ki egy státuszsort (`🔎 Konzisztencia-ellenőrzés`), olvasd újra a teljes `SPEC.md`-t, és nézd végig:
+   - minden EK létező szabályra (SZ-xx) hivatkozik, és minden szabályhoz tartozik legalább egy EK,
+   - minden EK **pontosan egy** storyban szerepel, és nincs nem létező EK a storyknál,
+   - az üzleti leírás 6. pontjának minden eleme le van fedve,
+   - a nevek és azonosítók egyeznek a `data/munkatarsak.json`-nal (pl. u05 = Horváth Anna),
+   - a „Kimarad” rész teljes, és a mini-tervhez képest nincs megmagyarázatlan eltérés.
+
+   Az eltéréseket **javítsd** célzott szerkesztéssel, és írd ki egy rövid táblázatban: ellenőrzés → eredmény (✅ / javítva: mit).
+5. Írd ki röviden a felhasználónak:
    - hány szabály és hány EK készült,
    - melyik üzleti elvárást melyik EK fedi le (rövid táblázat),
    - a storyk listája egy-egy sorban, az MVP jelölésével,
    - a nyitott kérdéseket, ha maradt ilyen.
-5. **Állj meg.** Kérd meg a felhasználót, hogy nézze át a `SPEC.md`-t, és ha rendben van, **saját maga** írja át a státuszt `JÓVÁHAGYVA`-ra (ez az 1. kapu). A státuszt te ne módosítsd. **A jóváhagyás után se kezdj bele magadtól a tesztírásba:** nyugtázd, és mondd meg, hogy a következő lépés a `/build S1`, de várd meg, hogy a felhasználó elindítsa (lásd a `CLAUDE.md` „Egyszerre egy fázis” részét).
+6. **Állj meg.** Kérd meg a felhasználót, hogy nézze át a `SPEC.md`-t, és ha rendben van, **saját maga** írja át a státuszt `JÓVÁHAGYVA`-ra (ez az 1. kapu). A státuszt te ne módosítsd. **A jóváhagyás után se kezdj bele magadtól a tesztírásba:** nyugtázd, és mondd meg, hogy a következő lépés a `/build S1`, de várd meg, hogy a felhasználó elindítsa (lásd a `CLAUDE.md` „Egyszerre egy fázis” részét).
 
 ## Változáskérés (ha már van `SPEC.md`)
 
@@ -52,5 +61,6 @@ Ez a skill **csak dokumentumot** készít. Kódot és tesztet nem írsz, amíg a
    - az új vagy módosult szabályokat és EK-kat jelöld (pl. „(1.1-ben új)”), a meglévő azonosítókat ne számozd át,
    - az új EK-kat sorold be egy storyba: jellemzően egy **új storyba** (pl. S7), hogy a kész storykat ne kelljen újranyitni,
    - töltsd ki a változásnaplót, benne az érintett EK-kal.
-3. Írd ki, mi változott, és melyik meglévő tesztet érinti.
-4. **Állj meg**, és kérj újbóli jóváhagyást.
+3. Futtasd le a 🔎 konzisztencia-ellenőrzést (lásd fent), és javítsd az eltéréseket.
+4. Írd ki, mi változott, és melyik meglévő tesztet érinti.
+5. **Állj meg**, és kérj újbóli jóváhagyást.
