@@ -1,4 +1,4 @@
-# Levezetői forgatókönyv – Köszönőfal demó (kb. 3 óra 15 perc)
+# Levezetői forgatókönyv – Köszönőfal demó (kb. 3,5 óra)
 
 ## Cél
 
@@ -20,13 +20,14 @@ kontextus és `CLAUDE.md`, toolok, skillek, az agentic loop (olvas → szerkeszt
 | Idő | Lépés | Résztvevő teendője | Mire mutass rá |
 |---|---|---|---|
 | 0:00 | **Indulás** | `git clone`, `cd`, `claude` | A harness betölti a `CLAUDE.md`-t: ez a „projekt-utasítás” a kontextusban |
-| 0:15 | **Specifikáció** | `/spec`, válasz a kérdésekre | Skill működés közben: az ágens kérdez, nem találgat |
-| 0:45 | **🟡 1. kapu** | `SPEC.md` átnézése, javíttatás, majd **saját kézzel** `Státusz: JÓVÁHAGYVA` | Az ember dönt, az ágens nem hagyhatja jóvá saját magát |
-| 0:55 | **Tesztek** | „Írd meg a teszteket az EK-khoz, még implementáció nélkül.” | Minden kritérium ellenőrizhetővé válik. Futtatás → piros |
-| 1:15 | ☕ Szünet | | |
-| 1:25 | **Építés** | „Implementáld a jóváhagyott spec szerint, amíg minden teszt zöld.” | Az agentic loop élőben: tool-hívások, engedélykérések, piros → javít. A `docs/arculat-ui.md` mint kontextus: ettől lesz igényes a felület |
-| 2:40 | **🟡 2. kapu** | `/verify`, `BIZONYITEK.md` elolvasása, kattintós forgatókönyv | Bizonyíték alapján fogadunk el, nem érzésre |
-| 3:00 | **Visszatekintés** | Kerekasztal | Lásd a kérdéseket lent |
+| 0:15 | **Az üzleti igény megértése** | Claude-dal összefoglaltatja a `docs/uzleti-leiras.md`-t, végigvezettet egy példát, rákérdez a hiányokra | Claude mint elemzőtárs. Első tool-használat: maga olvassa a fájlokat. A jóváhagyóknak érteniük kell, mit hagynak jóvá |
+| 0:30 | **Specifikáció** | `/spec`, válasz a kérdésekre | Skill működés közben: az ágens kérdez, nem találgat |
+| 0:55 | **🟡 1. kapu** | `SPEC.md` átnézése, javíttatás, majd **saját kézzel** `Státusz: JÓVÁHAGYVA` | Az ember dönt, az ágens nem hagyhatja jóvá saját magát |
+| 1:05 | **Tesztek** | „Írd meg a teszteket az EK-khoz, még implementáció nélkül.” | Minden kritérium ellenőrizhetővé válik. Futtatás → piros |
+| 1:25 | ☕ Szünet | | |
+| 1:35 | **Építés** | „Implementáld a jóváhagyott spec szerint, amíg minden teszt zöld.” | Az agentic loop élőben: tool-hívások, engedélykérések, piros → javít. A `docs/arculat-ui.md` mint kontextus: ettől lesz igényes a felület |
+| 2:50 | **🟡 2. kapu** | `/verify`, `BIZONYITEK.md` elolvasása, kattintós forgatókönyv | Bizonyíték alapján fogadunk el, nem érzésre |
+| 3:10 | **Visszatekintés** | Kerekasztal | Lásd a kérdéseket lent |
 | – | **+ feladatok** (aki hamarabb végez) | Lásd lent és a lab guide-ban | A változás is a specen és a kapun megy át |
 
 ## Javasolt promptok lépésenként
@@ -38,6 +39,19 @@ Foglald össze 5 pontban, milyen szabályok szerint fogsz dolgozni ebben a proje
 ```
 
 Itt látszik, hogy a `CLAUDE.md` bekerült a kontextusba.
+
+**Az üzleti igény megértése:**
+
+```text
+Olvasd el a docs/uzleti-leiras.md-t, és foglald össze közérthetően, legfeljebb 10 pontban:
+mit építünk, kik a szereplők, és mit láthat, illetve tehet az egyes szereplő.
+Még ne írj specifikációt vagy kódot, és ne hozz létre fájlt.
+```
+
+```text
+Szerinted mi nem egyértelmű vagy hiányzik az üzleti leírásból? Sorolj fel legfeljebb 5 pontot,
+mindegyikhez egy javasolt döntéssel. Még ne írj specifikációt.
+```
 
 **Specifikáció:**
 
