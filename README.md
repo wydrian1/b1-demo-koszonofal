@@ -46,7 +46,7 @@ Claude elolvassa az üzleti leírást (`docs/uzleti-leiras.md`), feltesz néhán
 | 3. Tesztek | Claude | Minden elfogadási kritériumhoz (EK-xx) teszt készül, ezek eleinte pirosak |
 | 4. Építés | Claude | Addig dolgozik, amíg minden teszt zöld |
 | 5. Bizonyíték | Claude (`/verify`) | `BIZONYITEK.md`: melyik kritériumot melyik teszt igazolja, mi az eredmény |
-| 6. **🟡 2. kapu** | **Te** | Elolvasod a bizonyítékot, végigkattintod a forgatókönyvet, és elfogadod vagy visszadobod |
+| 6. **🟡 2. kapu** | **Te** | Elolvasod a bizonyítékot, végigkattintod a kézi ellenőrzést (lab guide 2. kapu), és elfogadod vagy visszadobod |
 
 ## Futtatás (ha már elkészült)
 
@@ -69,7 +69,6 @@ python3 -m unittest discover -s tests -v
 | `CLAUDE.md` | Szabályok az ágensnek (technológia, folyamat, tilalmak) |
 | `docs/uzleti-leiras.md` | Az egyszerűsített üzleti igény, **ebből** indul minden |
 | `docs/arculat-ui.md` | A felület kötelező útmutatója: színek, komponensek, elrendezés |
-| `docs/demo-forgatokonyv.md` | Levezetői útmutató: időbeosztás, javasolt promptok, kattintós forgatókönyv |
 | `templates/SPEC-sablon.md` | A specifikáció kötelező szerkezete |
 | `data/munkatarsak.json` | Kitalált munkatársak és szervezeti hierarchia (az AD helyett) |
 | `.claude/skills/spec/` | `/spec`: specifikáció írása vagy módosítása |
