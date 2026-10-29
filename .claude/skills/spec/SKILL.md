@@ -17,7 +17,9 @@ Ez a skill **csak dokumentumot** készít. Kódot és tesztet nem írsz, amíg a
    - Ne adj „Egyéb” opciót, azt a felület magától hozzáadja.
    - Ha az eszköz nem érhető el, akkor tedd fel a kérdéseket számozott listában, mindegyikhez javasolt alapértelmezéssel.
 3. A válaszok után írd meg a `SPEC.md`-t **szakaszonként, látható haladással**, ne egyetlen nagy fájlírással (különben a felhasználó percekig csak egy pörgő jelzőt lát):
-   - Először vegyél fel egy **feladatlistát** a beépített todo/feladatlista eszközzel, a sablon szakaszaival (1. Cél … 11. Változásnapló). Így a felületen látszik, hol tartasz.
+   - **Közvetlenül a válaszok után, mielőtt a tartalmon gondolkodnál**, írj ki egy nyugtázó sort a döntésekkel, pl. `✅ Rögzítettem: rendezés dátum szerint, … – indul a SPEC.md írása (11 szakasz).` Ez legyen az első, amit a felhasználó lát.
+   - **Ne tervezd meg előre fejben a teljes specet.** Minden szakaszt közvetlenül a megírása előtt, röviden gondolj végig. Az előre, egyben végiggondolt spec a legfőbb oka a hosszú csendnek.
+   - Ezután rögtön vegyél fel egy **feladatlistát** a beépített todo/feladatlista eszközzel, a sablon szakaszaival (1. Cél … 11. Változásnapló). Így a felületen látszik, hol tartasz.
    - Hozd létre a `SPEC.md` **vázát**: a fejléc (státusz, verzió, dátum) és a szakaszcímek, a szakaszok helyén `(készül…)` jelöléssel.
    - Ezután **szakaszonként** töltsd ki egy-egy kis szerkesztéssel. Minden szakasz előtt írj ki egy rövid státuszsort, pl. `✍️ 4/11 – Adatmodell`, utána pedig pipáld ki a feladatlistában.
    - A hosszú részt (Elfogadási kritériumok) 3–5 EK-s adagokban írd, az adagok között egy-egy státuszsorral (pl. `✍️ 7/11 – EK-01…EK-05`).
