@@ -48,7 +48,14 @@ Ez a skill **csak dokumentumot** készít. Kódot és tesztet nem írsz, amíg a
 5. Írd ki röviden a felhasználónak:
    - hány szabály és hány EK készült,
    - melyik üzleti elvárást melyik EK fedi le (rövid táblázat),
-   - a storyk listája egy-egy sorban, az MVP jelölésével,
+   - **a létrejött storyk táblázata**, a végén egy sorral arról, hogy a megvalósítás a `/build S1`-gyel indul (jóváhagyás után):
+
+     ```markdown
+     | Story | Röviden | EK-k | Kész, ha… | MVP |
+     |---|---|---|---|---|
+     | S1 | Köszönet küldése | EK-01…EK-06 | Horváth Anna privát köszönetet küld Farkas Júliának | ✅ |
+     ```
+
    - a nyitott kérdéseket, ha maradt ilyen.
 6. **Állj meg.** Kérd meg a felhasználót, hogy nézze át a `SPEC.md`-t, és ha rendben van, **saját maga** írja át a státuszt `JÓVÁHAGYVA`-ra (ez az 1. kapu). A státuszt te ne módosítsd. **A jóváhagyás után se kezdj bele magadtól a tesztírásba:** nyugtázd, és mondd meg, hogy a következő lépés a `/build S1`, de várd meg, hogy a felhasználó elindítsa (lásd a `CLAUDE.md` „Egyszerre egy fázis” részét).
 
