@@ -1,0 +1,25 @@
+{
+  "_megjegyzes": "Kitalált demóadatok az Active Directory helyett. Valós személyekhez nincs közük.",
+  "munkatarsak": [
+    { "id": "u01", "nev": "Kovács Eszter",  "email": "eszter.kovacs@pelda.local",  "egyseg": "Digitális Főosztály",  "beosztas": "főosztályvezető",  "vezeto_id": null },
+
+    { "id": "u02", "nev": "Nagy Péter",     "email": "peter.nagy@pelda.local",     "egyseg": "Fejlesztési Osztály",  "beosztas": "osztályvezető",    "vezeto_id": "u01" },
+    { "id": "u03", "nev": "Szabó Katalin",  "email": "katalin.szabo@pelda.local",  "egyseg": "Adat Osztály",         "beosztas": "osztályvezető",    "vezeto_id": "u01" },
+    { "id": "u04", "nev": "Tóth Gábor",     "email": "gabor.toth@pelda.local",     "egyseg": "Üzemeltetési Osztály", "beosztas": "osztályvezető",    "vezeto_id": "u01" },
+
+    { "id": "u05", "nev": "Horváth Anna",   "email": "anna.horvath@pelda.local",   "egyseg": "Fejlesztési Osztály",  "beosztas": "szoftverfejlesztő", "vezeto_id": "u02" },
+    { "id": "u06", "nev": "Varga Bence",    "email": "bence.varga@pelda.local",    "egyseg": "Fejlesztési Osztály",  "beosztas": "szoftverfejlesztő", "vezeto_id": "u02" },
+    { "id": "u07", "nev": "Kiss Réka",      "email": "reka.kiss@pelda.local",      "egyseg": "Fejlesztési Osztály",  "beosztas": "tesztelő",          "vezeto_id": "u02" },
+    { "id": "u08", "nev": "Molnár Dávid",   "email": "david.molnar@pelda.local",   "egyseg": "Fejlesztési Osztály",  "beosztas": "üzleti elemző",     "vezeto_id": "u02" },
+
+    { "id": "u09", "nev": "Farkas Júlia",   "email": "julia.farkas@pelda.local",   "egyseg": "Adat Osztály",         "beosztas": "adatelemző",        "vezeto_id": "u03" },
+    { "id": "u10", "nev": "Balogh Máté",    "email": "mate.balogh@pelda.local",    "egyseg": "Adat Osztály",         "beosztas": "adatmérnök",        "vezeto_id": "u03" },
+    { "id": "u11", "nev": "Papp Zsófia",    "email": "zsofia.papp@pelda.local",    "egyseg": "Adat Osztály",         "beosztas": "adatmérnök",        "vezeto_id": "u03" },
+    { "id": "u12", "nev": "Takács Levente", "email": "levente.takacs@pelda.local", "egyseg": "Adat Osztály",         "beosztas": "BI fejlesztő",      "vezeto_id": "u03" },
+
+    { "id": "u13", "nev": "Juhász Nóra",    "email": "nora.juhasz@pelda.local",    "egyseg": "Üzemeltetési Osztály", "beosztas": "rendszermérnök",    "vezeto_id": "u04" },
+    { "id": "u14", "nev": "Lakatos Ádám",   "email": "adam.lakatos@pelda.local",   "egyseg": "Üzemeltetési Osztály", "beosztas": "rendszermérnök",    "vezeto_id": "u04" },
+    { "id": "u15", "nev": "Mészáros Lilla", "email": "lilla.meszaros@pelda.local", "egyseg": "Üzemeltetési Osztály", "beosztas": "hálózati mérnök",   "vezeto_id": "u04" },
+    { "id": "u16", "nev": "Simon Bálint",   "email": "balint.simon@pelda.local",   "egyseg": "Üzemeltetési Osztály", "beosztas": "DevOps mérnök",     "vezeto_id": "u04" }
+  ]
+}
