@@ -10,6 +10,7 @@ description: Lefuttatja az összes tesztet, és BIZONYITEK.md-t készít arról,
 
    ```bash
    python3 -m unittest discover -s tests -v
+   .venv/bin/python -m unittest discover -s tests/e2e -v
    ```
 
 3. Gyűjtsd ki a `SPEC.md`-ből az összes EK-azonosítót, a tesztekből pedig, hogy melyik teszt melyik EK-ra hivatkozik.
@@ -18,12 +19,17 @@ description: Lefuttatja az összes tesztet, és BIZONYITEK.md-t készít arról,
    ```markdown
    # Bizonyíték – Kudos
 
-   Spec verzió: X.Y · Dátum: ÉÉÉÉ-HH-NN · Tesztek: N db, ebből zöld: M
+   Spec verzió: X.Y · Dátum: ÉÉÉÉ-HH-NN · Unit: N db, ebből zöld: M · E2E: K db, ebből zöld: L
 
    ## Kritériumok lefedettsége
    | EK | Rövid leírás | Teszt(ek) | Eredmény |
    |---|---|---|---|
    | EK-01 | … | test_… | ✅ / ❌ |
+
+   ## Böngészős (E2E) tesztek storynként
+   | Story | E2E teszt | Mit kattint végig | Eredmény |
+   |---|---|---|---|
+   | S1 | test_s1_… | Horváth Anna köszönetet küld Farkas Júliának | ✅ / ❌ |
 
    ## Lefedetlen kritériumok
    (Amelyik EK-hoz nincs teszt. Ha nincs ilyen: „Nincs.”)

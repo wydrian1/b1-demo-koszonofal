@@ -26,8 +26,11 @@ claude --version
 ```bash
 git clone https://github.com/wydrian1/b1-demo-kudos.git kudos
 cd kudos
+bash scripts/setup-e2e.sh
 claude
 ```
+
+A `setup-e2e.sh` egyszer kell: egy helyi `.venv`-be telepíti a böngészős tesztekhez a Playwrightot és a Chromiumot (internet és `sudo` kell hozzá, pár perc). Az alkalmazás kódja ettől függetlenül csak a Python standard libraryt használja.
 
 Az első üzenet Claude-nak:
 
@@ -59,6 +62,13 @@ Tesztek:
 
 ```bash
 python3 -m unittest discover -s tests -v
+.venv/bin/python -m unittest discover -s tests/e2e -v
+```
+
+A második sor a böngészős (E2E) teszteket futtatja. Látható böngészőablakban:
+
+```bash
+HEADED=1 .venv/bin/python -m unittest discover -s tests/e2e -v
 ```
 
 ## Mi van a repóban?
@@ -69,6 +79,7 @@ python3 -m unittest discover -s tests -v
 | `docs/uzleti-leiras.md` | Az egyszerűsített üzleti igény, **ebből** indul minden |
 | `docs/arculat-ui.md` | A felület kötelező útmutatója: színek, komponensek, elrendezés |
 | `templates/SPEC-sablon.md` | A specifikáció kötelező szerkezete |
+| `scripts/setup-e2e.sh` | A böngészős tesztek eszközeinek telepítése (Playwright + Chromium) |
 | `data/munkatarsak.json` | Kitalált munkatársak és szervezeti hierarchia (az AD helyett) |
 | `.claude/skills/spec/` | `/spec`: specifikáció írása vagy módosítása |
 | `.claude/skills/build/` | `/build S1`: egy story tesztjei és építése, utána megállás |

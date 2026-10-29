@@ -31,12 +31,26 @@ A munka fázisokra bomlik. **Mindig csak azt az egy fázist csináld, amit a fel
 
 ## Technológiai keret
 
-- **Python 3.10+ standard library**: `http.server`, `sqlite3`, `json`, `unittest`, `html`, `urllib`.
-- **Külső csomag nem használható** (nincs `pip install`), és hálózati hívás vagy CDN sem (a céges proxy miatt, és hogy mindenkinél ugyanúgy fusson).
+- **Az alkalmazás kódja: Python 3.10+ standard library**: `http.server`, `sqlite3`, `json`, `unittest`, `html`, `urllib`.
+- **Külső csomag az alkalmazásban nem használható**, és hálózati hívás vagy CDN sem (a céges proxy miatt, és hogy mindenkinél ugyanúgy fusson).
+- **Egyetlen kivétel: a böngészős (E2E) tesztekhez a Playwright + Chromium**, ami a `.venv`-ben van. Ezt a felhasználó telepíti a `bash scripts/setup-e2e.sh` paranccsal, a munka elején. **Te semmit ne telepíts** (`pip install`, `playwright install`, `apt`): ha hiányzik, kérd meg a felhasználót, hogy futtassa a szkriptet.
 - Felület: sima HTML, CSS és vanilla JavaScript a `static/` mappában, keretrendszer nélkül.
 - Adattárolás: SQLite fájl (`kudos.db`). Ez nem kerül a gitbe.
 - Indítás: `python3 app.py` → http://localhost:8000
-- Tesztek: `python3 -m unittest discover -s tests -v`
+- Az `app.py` fogadja el a `PORT` és a `KUDOS_DB` környezeti változót (alapértelmezés: 8000 és `kudos.db`), hogy a böngészős tesztek külön porton, ideiglenes adatbázissal indíthassák.
+
+### Tesztek: két szint
+
+| Szint | Hol | Mit ellenőriz | Futtatás |
+|---|---|---|---|
+| **Unit** | `tests/` | az üzleti logikát (szabályok, jogosultság, értesítések), böngésző nélkül | `python3 -m unittest discover -s tests -v` |
+| **E2E (böngészős)** | `tests/e2e/` | a felületet, valódi böngészőben: a story „Kész, ha…” forgatókönyvét | `.venv/bin/python -m unittest discover -s tests/e2e -v` |
+
+- **Minden storyhoz legalább egy E2E teszt** tartozik, ami a story „Kész, ha…” feltételét kattintja végig, a `data/munkatarsak.json` neveivel. A teszt neve hivatkozzon a storyra és az EK-ra (pl. `test_s1_anna_koszonetet_kuld_juliának`).
+- Az E2E tesztek **maguk indítják az alkalmazást** alfolyamatként (`.venv/bin/python app.py`, szabad porton, pl. 8765, ideiglenes `KUDOS_DB`-vel), megvárják, amíg a port válaszol, és a végén leállítják.
+- Szelektorként elsősorban szerepet, feliratot és szöveget használj (`get_by_role`, `get_by_label`, `get_by_text`), ne törékeny CSS-útvonalat. Ez az akadálymentességet is ellenőrzi.
+- Alapból **headless** fut. Ha a `HEADED=1` környezeti változó be van állítva, látható böngészőablakkal és lassítással (`slow_mo`) fusson, hogy a felhasználó végignézhesse.
+- Az E2E tesztek a `unittest` modult használják (a Playwright szinkron API-jával), nincs pytest.
 
 Javasolt szerkezet (a spec felülírhatja):
 
@@ -44,7 +58,9 @@ Javasolt szerkezet (a spec felülírhatja):
 app.py              # belépési pont: szerver indítása
 kudos/              # üzleti logika (szervezet, üzenetek, értesítések, jogosultság)
 static/             # HTML, CSS, JS
-tests/              # unittest tesztek, EK-azonosítókkal
+tests/              # unit tesztek, EK-azonosítókkal
+tests/e2e/          # böngészős tesztek (Playwright), storynként
+scripts/            # telepítő- és ellenőrzőszkriptek (NE módosítsd)
 data/               # bemeneti adatok (CSAK OLVASHATÓ)
 ```
 
@@ -59,7 +75,7 @@ Az üzleti logika (ki kinek a vezetője, ki mit láthat) legyen a webes rétegt�
 
 ## Tilalmak
 
-- A `data/` és a `docs/` mappát, valamint a `templates/` tartalmát **ne módosítsd**.
+- A `data/`, a `docs/`, a `templates/` és a `scripts/` mappa tartalmát **ne módosítsd**.
 - Ne implementálj valódi AD-, e-mail-, Teams- vagy egyéb külső integrációt. Ezeket a spec szerinti helyi helyettesítő váltja ki.
 - Ne hozz létre olyan funkciót, ami nincs a jóváhagyott specben. Ha hasznosnak tartod, javasold változáskérésként.
 
