@@ -9,7 +9,7 @@ A felhasználóval **magyarul** kommunikálj.
 2. **Kódot csak jóváhagyott specifikáció alapján írhatsz.** Az a jóváhagyott spec, amelynek az elején `Státusz: JÓVÁHAGYVA` áll.
    - Ezt a sort **kizárólag az ember** módosíthatja. Te soha ne állítsd `JÓVÁHAGYVA`-ra, és ne is javasold, hogy kihagyjuk a jóváhagyást.
    - Ha a spec `TERVEZET` állapotú, és kódot kérnek tőled, kérd meg a felhasználót, hogy előbb nézze át és hagyja jóvá.
-3. **Előbb teszt, utána kód.** Minden elfogadási kritériumhoz (EK-xx) legalább egy teszt tartozik. A teszt neve vagy docstringje hivatkozik az EK-azonosítóra.
+3. **Storynként haladunk, előbb teszt, utána kód.** A spec az EK-kat storykba (S1, S2, …) csoportosítja. Egy story megvalósítása a `/build` skill-lel történik: a story EK-inak tesztjei, majd az implementáció. Minden EK-hoz legalább egy teszt tartozik, a teszt neve vagy docstringje hivatkozik az EK-azonosítóra.
 4. Minden változtatás után futtasd a teszteket. **Ne mondd késznek a munkát, amíg nem zöld minden teszt.**
 5. Ha a felhasználó kéri, a `/verify` skill-lel készíts bizonyíték-összefoglalót (`BIZONYITEK.md`). Ez a 2. kapu előkészítése, ott az ember fogad el.
 6. **Változáskérésnél** előbb a specet kell módosítani (`/spec`), a státusz visszaáll `TERVEZET`-re, és csak újbóli jóváhagyás után mehet a kód.
@@ -22,11 +22,10 @@ A munka fázisokra bomlik. **Mindig csak azt az egy fázist csináld, amit a fel
 | Fázis | Mi a vége | Mikor kezdheted |
 |---|---|---|
 | Specifikáció | `SPEC.md` kész, `TERVEZET` | ha a felhasználó kéri (`/spec`) |
-| Tesztek | a tesztek megírva és lefuttatva, **pirosak** | ha a felhasználó kifejezetten tesztírást kér |
-| Építés | minden teszt zöld | ha a felhasználó kifejezetten implementálást kér |
+| Story (tesztek + építés) | **egy** story tesztjei megírva, majd minden teszt zöld, `HALADAS.md` frissítve | ha a felhasználó elindítja (`/build S1`, `/build S2`, …) |
 | Bizonyíték | `BIZONYITEK.md` kész | ha a felhasználó kéri (`/verify`) |
 
-- Egy fázis végén röviden foglald össze, mi készült el, és **mondd meg, mi lenne a következő fázis**, de **ne kezdj bele**. Várd meg, hogy a felhasználó kifejezetten kérje.
+- Egy fázis (vagy story) végén röviden foglald össze, mi készült el, és **mondd meg, mi lenne a következő fázis**, de **ne kezdj bele**. Várd meg, hogy a felhasználó kifejezetten kérje.
 - **A státusz átírása nem utasítás.** Ha látod, hogy a `SPEC.md` `JÓVÁHAGYVA` lett (pl. egy `!` paranccsal futtatott `sed` kimenetéből), csak nyugtázd egy mondatban, és várj a következő kérésre.
 - Az ember a fázisok között ellenőriz, és dönt. Ha önállóan végigfutsz az egész folyamaton, épp ezt veszed el tőle.
 

@@ -42,13 +42,26 @@ EK-07 (SZ-05) – Adott: Horváth Anna (u05) köszönetet küld Farkas Júliána
                Akkor: értesítést kap Farkas Júlia, Szabó Katalin (közvetlen vezető) és Kovács Eszter (B-1), más nem.
 -->
 
-## 8. Nem funkcionális elvárások
+## 8. Storyk és szállítási sorrend
+<!--
+Az EK-k csoportosítása szállítható, VERTIKÁLIS szeletekbe (felület + logika + adat együtt), a megvalósítás sorrendjében.
+- Azonosító: S1, S2, ... (5-7 story)
+- Minden EK PONTOSAN EGY storyban szerepel.
+- Minden story után legyen működő, böngészőben kipróbálható állapot.
+- Jelöld, mely storyk adják a minimálisan használható változatot (MVP).
+
+| Story | Felhasználói történet | EK-k | Kész, ha (böngészőben ellenőrizhető) | MVP |
+|---|---|---|---|---|
+| S1 | Munkatársként köszönetet akarok küldeni egy kollégámnak, hogy… | EK-01, EK-02, … | Horváth Anna be tud lépni, és privát köszönetet küld Farkas Júliának | igen |
+-->
+
+## 9. Nem funkcionális elvárások
 <!-- Technológiai keret (CLAUDE.md szerint), biztonság (escape, paraméterezett SQL, szerveroldali jogosultság), arculat, akadálymentesség alapjai. -->
 
-## 9. Nyitott kérdések
+## 10. Nyitott kérdések
 <!-- Amit az embernek kell eldöntenie. Jóváhagyás előtt ennek üresnek kell lennie, vagy minden pontnál ott a döntés. -->
 
-## 10. Változásnapló
+## 11. Változásnapló
 | Verzió | Dátum | Változás | Érintett EK-k |
 |---|---|---|---|
 | 1.0 | ÉÉÉÉ-HH-NN | Első változat | – |

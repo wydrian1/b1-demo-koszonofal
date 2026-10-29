@@ -43,10 +43,9 @@ Claude elolvassa az üzleti leírást (`docs/uzleti-leiras.md`), feltesz néhán
 |---|---|---|
 | 1. Specifikáció | Claude (`/spec`) | `SPEC.md` készül, státusz: `TERVEZET` |
 | 2. **🟡 1. kapu** | **Te** | Átnézed a specet. Ha jó, **te magad** írod át a státuszt `JÓVÁHAGYVA`-ra |
-| 3. Tesztek | Claude | Minden elfogadási kritériumhoz (EK-xx) teszt készül, ezek eleinte pirosak |
-| 4. Építés | Claude | Addig dolgozik, amíg minden teszt zöld |
-| 5. Bizonyíték | Claude (`/verify`) | `BIZONYITEK.md`: melyik kritériumot melyik teszt igazolja, mi az eredmény |
-| 6. **🟡 2. kapu** | **Te** | Elolvasod a bizonyítékot, végigkattintod a kézi ellenőrzést (lab guide 2. kapu), és elfogadod vagy visszadobod |
+| 3. Storyk | Claude (`/build S1`, `/build S2`, …) | Storynként: előbb a story tesztjei (pirosak), aztán az építés, amíg minden zöld. Minden story után megáll, és megmondja, mit nézz meg a böngészőben |
+| 4. Bizonyíték | Claude (`/verify`) | `BIZONYITEK.md`: melyik kritériumot melyik teszt igazolja, mi az eredmény |
+| 5. **🟡 2. kapu** | **Te** | Elolvasod a bizonyítékot, végigkattintod a kézi ellenőrzést (lab guide 2. kapu), és elfogadod vagy visszadobod |
 
 ## Futtatás (ha már elkészült)
 
@@ -72,4 +71,5 @@ python3 -m unittest discover -s tests -v
 | `templates/SPEC-sablon.md` | A specifikáció kötelező szerkezete |
 | `data/munkatarsak.json` | Kitalált munkatársak és szervezeti hierarchia (az AD helyett) |
 | `.claude/skills/spec/` | `/spec`: specifikáció írása vagy módosítása |
+| `.claude/skills/build/` | `/build S1`: egy story tesztjei és építése, utána megállás |
 | `.claude/skills/verify/` | `/verify`: tesztek futtatása és bizonyíték-összefoglaló |
