@@ -81,7 +81,10 @@ minden lépés után futtasd a teszteket, és addig dolgozz, amíg minden zöld 
 10. Lépj be **Nagy Péterként** (Anna vezetője): **nincs** értesítés (nem ő a címzettek vezetője), de a vezetői nézetben **látja** mindkét üzenetet, mert a küldő a beosztottja.
 11. Lépj be **Tóth Gáborként** (Nóra vezetője): értesítést kap Nóra köszönetéről, a vezetői nézetben azt látja, de Júliáét **nem**. A statisztikájában Júlia köszönete nem szerepel.
 
-A 9–11. lépés a legérdekesebb: itt derül ki, hogy a jogosultsági logika, és vele a statisztika, tényleg a spec szerint működik-e.
+12. Lépj be **Balogh Mátéként**, és küldj köszönetet **Szabó Katalinnak** (osztályvezető, B-2). Utána lépj be **Kovács Eszterként**: erről **pontosan egy** értesítést kapott, pedig közvetlen vezetőként és B-1-ként is érintett.
+13. Lépj be **Fehér Lászlóként** (board tag, B): a vezetői nézetben a főosztály összes köszönetét látja, de értesítést egyikről sem kapott, mert egyik címzettnek sem ő a közvetlen vezetője.
+
+A 9–13. lépés a legérdekesebb: itt derül ki, hogy a jogosultsági logika, a szintek kezelése és vele a statisztika tényleg a spec szerint működik-e. A 12. lépés pont az a határeset, amit egy „vezető vezetője” típusú definíció elrontana.
 
 ## Változáskérés-ötletek (ha marad idő)
 
@@ -118,7 +121,7 @@ A szabály: előbb `/spec` a kéréssel, a státusz visszaáll `TERVEZET`-re, ma
 | – (új a demóban) | Kategóriák, privát / nyilvános láthatóság és közös fal, 👏 reakció, napi 3-as korlát |
 | Képfeltöltés, vírusellenőrzés | Kimarad (változáskérés-ötlet) |
 | E-mail / Teams értesítés | Alkalmazáson belüli értesítés |
-| Közvetlen és B-1 vezető értesítése | Megmarad, a JSON-hierarchiából számolva |
+| Közvetlen és B-1 vezető értesítése | Megmarad. A B-1 pozíció (főosztályvezető), a JSON `szint` mezőjéből |
 | Vezetői nézet felelősségi kör szerint | Megmarad (a demó szíve) |
 | Statisztikák | Megmarad, egyszerűsítve: 4 mutató, kategória-megoszlás, top 3 a vezető körére |
 | Admin, moderáció, riport | Kimarad |

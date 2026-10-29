@@ -11,15 +11,30 @@ A munkatársak köszönő üzenetet küldhessenek egymásnak, a vezetők pedig l
 
 ## 2. Szereplők
 
+### Szervezeti szintek
+
+A szint **pozíció**, a `data/munkatarsak.json` `szint` mezője adja meg (mint egy AD-attribútum):
+
+| Szint | Kik | Megjegyzés |
+|---|---|---|
+| **B** | board tag (igazgatósági tag) | Fölötte már csak a CEO áll, ő nincs az adatokban |
+| **B-1** | főosztályvezető | a board tag alatti szint |
+| **B-2** | osztályvezető | a legalacsonyabb vezetői szint |
+| – | alkalmazott | nincs beosztottja |
+
+### Szereplők
+
 | Szereplő | Mit tehet |
 |---|---|
-| **Munkatárs** | Köszönetet küld, látja a saját küldött és kapott köszöneteit és a közös falat, reagál, értesítést kap |
-| **Közvetlen vezető** | Mint egy munkatárs, és látja a **közvetlen beosztottjai** által küldött vagy kapott köszöneteket, valamint ezek statisztikáit |
-| **B-1 vezető** | Mint egy munkatárs, és látja a **teljes szervezeti köréhez** (minden alatta lévő munkatárshoz) kapcsolódó köszöneteket és statisztikákat |
+| **Munkatárs** (bárki) | Köszönetet küld, látja a saját küldött és kapott köszöneteit és a közös falat, reagál, értesítést kap |
+| **Vezető** (B-2, B-1, B) | Mint egy munkatárs, és látja a **szervezeti köréhez** kapcsolódó köszöneteket és azok statisztikáit |
 
+A vezető **szervezeti köre**: minden alatta lévő munkatárs, bármilyen mélységben. B-2-nél ez az osztálya, B-1-nél a teljes főosztálya, B-nél minden alá tartozó főosztály.
 A vezető is munkatárs, tehát ő is küldhet és kaphat köszönetet.
 
-**B-1 vezető (ebben a demóban):** a címzett közvetlen vezetőjének a vezetője. Ha ilyen nincs (mert a címzett közvetlen vezetője már a legfelső szint), akkor nincs B-1 vezető.
+**A címzett B-1 vezetője:** a címzett feletti vezetői láncban lévő, **B-1 szintű** vezető (vagyis a címzett főosztályvezetője).
+- Ha a címzett közvetlen vezetője maga a B-1 (pl. egy osztályvezető kap köszönetet), akkor ugyanaz a személy közvetlen vezetőként és B-1-ként is érintett.
+- Ha a címzett maga B-1 vagy B szintű, akkor nincs „B-1 vezetője”.
 
 ## 3. Funkciók
 
@@ -79,16 +94,14 @@ A vezető is munkatárs, tehát ő is küldhet és kaphat köszönetet.
 Köszönet küldésekor értesítést kap:
 - a **címzett**,
 - a címzett **közvetlen vezetője** (ha van),
-- a címzett **B-1 vezetője** (ha van).
+- a címzett **B-1 vezetője** (ha van, lásd a 2. pontot).
 
-Egy személy egy üzenetről legfeljebb egy értesítést kap. Az értesítés az alkalmazáson belül jelenik meg (csengő ikon, olvasatlan-számláló), és tartalmazza a küldő és a címzett nevét, a kategóriát, a dátumot, valamint az üzenet rövid előnézetét.
+A board tag (B) csak akkor kap értesítést, ha ő a címzett közvetlen vezetője. Egy személy egy üzenetről legfeljebb egy értesítést kap, akkor is, ha több szerepben érintett. Az értesítés az alkalmazáson belül jelenik meg (csengő ikon, olvasatlan-számláló), és tartalmazza a küldő és a címzett nevét, a kategóriát, a dátumot, valamint az üzenet rövid előnézetét.
 Az értesítés megnyitásakor olvasottá válik. Az összes értesítés egyszerre is olvasottnak jelölhető.
 
 ### 3.7. Vezetői nézet („Csapatköszönetek”)
-- Csak vezetők látják (akiknek van legalább egy beosztottja).
-- A vezető azokat az üzeneteket látja (privátokat és nyilvánosakat is), ahol a **küldő vagy a címzett az ő szervezeti körébe tartozik**:
-  - közvetlen vezető: a közvetlen beosztottjai,
-  - B-1 vezető: minden alatta lévő munkatárs, bármilyen mélységben.
+- Csak vezetők látják (B-2, B-1 és B szint, vagyis akiknek van legalább egy beosztottja).
+- A vezető azokat az üzeneteket látja (privátokat és nyilvánosakat is), ahol a **küldő vagy a címzett az ő szervezeti körébe tartozik** (minden alatta lévő munkatárs, bármilyen mélységben).
 - Más üzenetet **nem láthat**, akkor sem, ha közvetlenül próbálja lekérni.
 - Itt is van keresés, kategória- és időszakszűrés.
 
@@ -116,7 +129,7 @@ Az eredeti igényből szándékosan kihagyjuk, és a spec „Kimarad” részéb
 ## 5. Adatforrás
 
 A munkatársak adatai a `data/munkatarsak.json` fájlban vannak (ez helyettesíti az AD-t):
-azonosító, név, e-mail, szervezeti egység, beosztás és a közvetlen vezető azonosítója.
+azonosító, név, e-mail, szervezeti egység, beosztás, **szint** (B, B-1, B-2 vagy üres) és a közvetlen vezető azonosítója.
 Az alkalmazás ezt csak olvassa.
 
 ## 6. Üzleti elfogadási elvárások
@@ -130,7 +143,7 @@ A megoldás akkor jó, ha:
 5. Az üzenet megjelenik a küldő „Küldött” és a címzett „Kapott” listájában.
 6. A nyilvános köszönet mindenkinek megjelenik a közös falon, a privát senkinek.
 7. Tapsolni lehet, egy személy egy köszönetre csak egyszer, és csak olyanra, amit láthat.
-8. A címzett, a közvetlen vezetője és a B-1 vezetője értesítést kap, más nem.
+8. A címzett, a közvetlen vezetője és a B-1 vezetője értesítést kap, más nem, és senki sem kap kettőt ugyanarról az üzenetről.
 9. A vezető a vezetői nézetben csak a saját szervezeti köréhez kapcsolódó üzeneteket látja, a statisztikája is csak ezekből számol.
 10. A saját és a vezetői nézetben is működik a keresés, a kategória- és az időszakszűrés.
 11. A felület megfelel a `docs/arculat-ui.md` elvárásainak: Raiffeisen színek, igényes kártyás megjelenés, mobilon is használható, billentyűzettel is kezelhető.
