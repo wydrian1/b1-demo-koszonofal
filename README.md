@@ -6,6 +6,8 @@ Nem „vibe coding”: előbb **specifikáció**, utána **tesztek**, és csak e
 
 > Az alkalmazás csak helyben fut, kitalált adatokkal. Nincs AD, e-mail, szerver vagy deploy.
 
+**📘 Lépésről lépésre útmutató: [Köszönőfal lab guide](https://wydrian1.github.io/b1training/lab/)**
+
 ## Előfeltételek
 
 - WSL (Ubuntu), benne `python3` (3.10 vagy újabb) és `git`
