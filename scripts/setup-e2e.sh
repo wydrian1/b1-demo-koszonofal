@@ -9,9 +9,15 @@ PLAYWRIGHT_VERSION="1.48.0"
 
 echo "▶ 1/5 Python virtuális környezet (.venv)"
 if ! python3 -c "import ensurepip" >/dev/null 2>&1; then
-  echo "❌ Hiányzik a python3-venv csomag. Telepítsd, majd futtasd újra ezt a szkriptet:"
-  echo "   sudo apt install -y python3-venv"
-  exit 1
+  echo "  Hiányzik a python3-venv csomag, telepítem (sudo jelszót kérhet)…"
+  sudo apt-get update -qq
+  # A pontos, verziós csomag (pl. python3.12-venv) a biztos; ha nincs ilyen, az általános.
+  PYVER="$(python3 -c 'import sys; print(f"{sys.version_info.major}.{sys.version_info.minor}")')"
+  sudo apt-get install -y -qq "python${PYVER}-venv" || sudo apt-get install -y -qq python3-venv
+  if ! python3 -c "import ensurepip" >/dev/null 2>&1; then
+    echo "❌ Nem sikerült telepíteni a python3-venv csomagot. Szólj a levezetőnek."
+    exit 1
+  fi
 fi
 [ -d .venv ] || python3 -m venv .venv
 
