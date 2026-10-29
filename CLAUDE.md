@@ -63,7 +63,9 @@ Az üzleti logika (ki kinek a vezetője, ki mit láthat) legyen a webes rétegt�
 - Minden felhasználói szöveget **escape-elve** jeleníts meg (XSS ellen), és az SQL-ben csak paraméterezett lekérdezést használj.
 - A jogosultságot **a szerver** ellenőrzi, nem a böngésző: a vezetői nézet API-ja is szűrjön a bejelentkezett felhasználó szerint.
 
-## Arculat
+## Felület és arculat
 
-Raiffeisen színek: sárga `#FEE600` (kiemelés, gombok), Off Black `#2B2D33` (szöveg), Warm Grey `#F1EDE6` (háttér), fehér kártyák.
-Betű: `"Amalia", "Segoe UI", system-ui, sans-serif`. Legyen reszponzív, és billentyűzettel is használható.
+- A felület **kötelező útmutatója a `docs/arculat-ui.md`**: design tokenek, elrendezés, komponensek (köszönetkártya, 3 lépéses varázsló, toast, üres állapotok, statisztika), akadálymentesség. Spec írásakor és építéskor is olvasd el.
+- A spec „Nem funkcionális elvárások” része hivatkozzon rá, és a legfontosabb UI-elvárásokhoz (pl. varázsló lépései, hibaüzenet a mező alatt, üres állapot, mobil tab-sáv) is legyen EK.
+- A CSS legyen külön fájlban, a tokenekkel kezdődjön, és a komponensek ezekre a változókra épüljenek (ne legyenek szétszórt, beégetett színek).
+- Építés végén nézd át a felületet a `docs/arculat-ui.md` 5. pontja („Amit kerülj”) alapján is.

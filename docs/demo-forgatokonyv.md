@@ -1,4 +1,4 @@
-# Levezetői forgatókönyv – Köszönőfal demó (kb. 3 óra)
+# Levezetői forgatókönyv – Köszönőfal demó (kb. 3 óra 15 perc)
 
 ## Cél
 
@@ -24,10 +24,10 @@ kontextus és `CLAUDE.md`, toolok, skillek, az agentic loop (olvas → szerkeszt
 | 0:45 | **🟡 1. kapu** | `SPEC.md` átnézése, javíttatás, majd **saját kézzel** `Státusz: JÓVÁHAGYVA` | Az ember dönt, az ágens nem hagyhatja jóvá saját magát |
 | 0:55 | **Tesztek** | „Írd meg a teszteket az EK-khoz, még implementáció nélkül.” | Minden kritérium ellenőrizhetővé válik. Futtatás → piros |
 | 1:15 | ☕ Szünet | | |
-| 1:25 | **Építés** | „Implementáld a jóváhagyott spec szerint, amíg minden teszt zöld.” | Az agentic loop élőben: tool-hívások, engedélykérések, piros → javít |
-| 2:25 | **🟡 2. kapu** | `/verify`, `BIZONYITEK.md` elolvasása, kattintós forgatókönyv | Bizonyíték alapján fogadunk el, nem érzésre |
-| 2:45 | **Változáskérés** (opcionális) | Lásd lent | A változás is a specen és a kapun megy át |
+| 1:25 | **Építés** | „Implementáld a jóváhagyott spec szerint, amíg minden teszt zöld.” | Az agentic loop élőben: tool-hívások, engedélykérések, piros → javít. A `docs/arculat-ui.md` mint kontextus: ettől lesz igényes a felület |
+| 2:40 | **🟡 2. kapu** | `/verify`, `BIZONYITEK.md` elolvasása, kattintós forgatókönyv | Bizonyíték alapján fogadunk el, nem érzésre |
 | 3:00 | **Visszatekintés** | Kerekasztal | Lásd a kérdéseket lent |
+| – | **+ feladatok** (aki hamarabb végez) | Lásd lent és a lab guide-ban | A változás is a specen és a kapun megy át |
 
 ## Javasolt promptok lépésenként
 
@@ -70,21 +70,22 @@ minden lépés után futtasd a teszteket, és addig dolgozz, amíg minden zöld 
 `python3 app.py`, majd http://localhost:8000
 
 1. Lépj be **Horváth Anna** (Fejlesztési Osztály) néven.
-2. Új köszönet: keress rá arra, hogy „adat”, és válaszd ki **Farkas Júliát**. Üzenet: „Köszönöm a gyors adatelemzést! 🙏🎉” → ellenőrző nézet → küldés → visszaigazolás.
-3. Próbáld meg Horváth Annaként saját magadnak küldeni → a rendszer nem engedi. Üres üzenettel is próbáld meg → nem engedi.
-4. Horváth Anna „Küldött” listájában ott az üzenet.
-5. Lépj be **Farkas Júliaként**: van értesítés, és a „Kapott” listában ott az üzenet.
-6. Lépj be **Szabó Katalinként** (Júlia vezetője): van értesítés, és a vezetői nézetben látszik az üzenet.
-7. Lépj be **Kovács Eszterként** (B-1): van értesítés, és a vezetői nézetben látszik az üzenet.
-8. Lépj be **Nagy Péterként** (Anna vezetője): **nincs** értesítés (nem ő a címzett vezetője), de a vezetői nézetben **látja** az üzenetet, mert a küldő a beosztottja.
-9. Lépj be **Tóth Gáborként**: sem értesítés, sem üzenet nincs a vezetői nézetében.
-10. Lépj be **Varga Bence** (nem vezető) néven: a vezetői nézet nem érhető el.
+2. Új köszönet: keress rá arra, hogy „adat”, és válaszd ki **Farkas Júliát**. Kategória: 🚀 Gyors segítség, üzenet: „Köszönöm a gyors adatelemzést! 🙏🎉”, láthatóság: **Privát** → ellenőrző nézet → küldés → toast.
+3. Küldj Annaként egy második köszönetet **Juhász Nórának** (🤝 Együttműködés), ezúttal **Nyilvános** láthatósággal.
+4. Próbáld meg Annaként: saját magadnak küldeni, üres üzenetet küldeni, kategória nélkül küldeni, illetve Júliának ugyanazon a napon egy 4. köszönetet küldeni → egyik sem mehet át, a hiba a mező alatt jelenik meg.
+5. Anna „Küldött” listájában ott mindkét üzenet, kategória-chippel és láthatóság-ikonnal.
+6. Lépj be **Varga Bence** (nem vezető) néven: a **falon** ott a nyilvános (Nórának szóló) köszönet, a privát (Júliának szóló) nincs. Tapsolj 👏 a nyilvánosra, majd kattints újra → a taps visszavonódik. A vezetői nézet nem érhető el.
+7. Lépj be **Farkas Júliaként**: van értesítés, és a „Kapott” listában ott a privát üzenet.
+8. Lépj be **Szabó Katalinként** (Júlia vezetője): van értesítés, a vezetői nézetben látszik a privát üzenet, és a statisztikában is megjelenik (kapott: 1, 🚀 Gyors segítség).
+9. Lépj be **Kovács Eszterként** (B-1): van értesítés Júlia köszönetéről, és Nóráéról is. A vezetői nézetben mindkét üzenet látszik, a statisztika a teljes körre számol.
+10. Lépj be **Nagy Péterként** (Anna vezetője): **nincs** értesítés (nem ő a címzettek vezetője), de a vezetői nézetben **látja** mindkét üzenetet, mert a küldő a beosztottja.
+11. Lépj be **Tóth Gáborként** (Nóra vezetője): értesítést kap Nóra köszönetéről, a vezetői nézetben azt látja, de Júliáét **nem**. A statisztikájában Júlia köszönete nem szerepel.
 
-A 8. és a 9. lépés a legérdekesebb: itt derül ki, hogy a jogosultsági logika tényleg a spec szerint működik-e.
+A 9–11. lépés a legérdekesebb: itt derül ki, hogy a jogosultsági logika, és vele a statisztika, tényleg a spec szerint működik-e.
 
 ## Változáskérés-ötletek (ha marad idő)
 
-- **Statisztika a vezetői nézetben:** az elmúlt 30 napban küldött és kapott köszönetek száma a vezető körében.
+- **Visszavonás:** a küldő 5 percen belül visszavonhatja a köszönetét (az értesítések is eltűnnek).
 - **Emoji-gyorsgombok:** 5 gyakori emoji egy kattintással beszúrható.
 - **Képfeltöltés:** PNG/JPG, legfeljebb 2 MB. Jó vitatéma, mert ütközik a „Kimarad” résszel: a hatókört is bővíteni kell.
 
@@ -114,12 +115,13 @@ A szabály: előbb `/spec` a kéréssel, a státusz visszaáll `TERVEZET`-re, ma
 | AD + SSO bejelentkezés | `data/munkatarsak.json` + „Belépés mint…” (DEMO jelzéssel) |
 | AD-alapú címzettkereső | Keresés a JSON-ban név, egység vagy e-mail szerint |
 | Emoji-támogatás | Unicode emoji a szövegben |
+| – (új a demóban) | Kategóriák, privát / nyilvános láthatóság és közös fal, 👏 reakció, napi 3-as korlát |
 | Képfeltöltés, vírusellenőrzés | Kimarad (változáskérés-ötlet) |
 | E-mail / Teams értesítés | Alkalmazáson belüli értesítés |
 | Közvetlen és B-1 vezető értesítése | Megmarad, a JSON-hierarchiából számolva |
 | Vezetői nézet felelősségi kör szerint | Megmarad (a demó szíve) |
-| Statisztikák | Kimarad (változáskérés-ötlet) |
+| Statisztikák | Megmarad, egyszerűsítve: 4 mutató, kategória-megoszlás, top 3 a vezető körére |
 | Admin, moderáció, riport | Kimarad |
 | Naplózás, megőrzés, DPIA | Kimarad (beszélgetési téma: élesben ez kötelező) |
-| Arculat, reszponzivitás, WCAG | Raiffeisen színek, reszponzív, billentyűzettel kezelhető (alapszint) |
+| Arculat, reszponzivitás, WCAG | `docs/arculat-ui.md`: Raiffeisen tokenek, kártyás felület, 3 lépéses varázsló, mobil tab-sáv, alap akadálymentesség |
 | Szerveres üzemeltetés, CI/CD | Helyben fut: `python3 app.py` |

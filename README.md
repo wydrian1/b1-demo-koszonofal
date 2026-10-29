@@ -67,6 +67,7 @@ python3 -m unittest discover -s tests -v
 |---|---|
 | `CLAUDE.md` | Szabályok az ágensnek (technológia, folyamat, tilalmak) |
 | `docs/uzleti-leiras.md` | Az egyszerűsített üzleti igény, **ebből** indul minden |
+| `docs/arculat-ui.md` | A felület kötelező útmutatója: színek, komponensek, elrendezés |
 | `docs/demo-forgatokonyv.md` | Levezetői útmutató: időbeosztás, javasolt promptok, kattintós forgatókönyv |
 | `templates/SPEC-sablon.md` | A specifikáció kötelező szerkezete |
 | `data/munkatarsak.json` | Kitalált munkatársak és szervezeti hierarchia (az AD helyett) |
