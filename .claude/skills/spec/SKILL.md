@@ -10,7 +10,12 @@ Ez a skill **csak dokumentumot** készít. Kódot és tesztet nem írsz, amíg a
 ## Új spec (ha még nincs `SPEC.md`)
 
 1. Olvasd el: `docs/uzleti-leiras.md`, `templates/SPEC-sablon.md`, `data/munkatarsak.json`, `CLAUDE.md`.
-2. **Tegyél fel legfeljebb 5 tisztázó kérdést** a felhasználónak, egyszerre, számozva. Csak azt kérdezd, ami tényleg nem következik a leírásból (pl. időzóna, rendezés, mi számít „szervezeti körnek”). Minden kérdéshez írj egy javasolt alapértelmezést is, hogy elég legyen egy „mehet” válasz.
+2. **Tegyél fel legfeljebb 4 tisztázó kérdést, az `AskUserQuestion` eszközzel** (választós felület), ne szöveges listában.
+   - Csak azt kérdezd, ami tényleg nem következik a leírásból (pl. rendezés, mi számít „szervezeti körnek”, mi történjen határesetben).
+   - Kérdésenként 2–4 konkrét, egymást kizáró opciót adj. Az általad javasolt opció legyen az **első**, a címkéje végén „(Ajánlott)” jelöléssel, a leírásában egy mondattal az indok.
+   - Rövid fejlécet (header) adj minden kérdésnek, pl. „Rendezés”, „B-1 határeset”.
+   - Ne adj „Egyéb” opciót, azt a felület magától hozzáadja.
+   - Ha az eszköz nem érhető el, akkor tedd fel a kérdéseket számozott listában, mindegyikhez javasolt alapértelmezéssel.
 3. A válaszok után írd meg a `SPEC.md`-t **pontosan a sablon szerkezetében**:
    - `Státusz: TERVEZET`, `Verzió: 1.0`, mai dátum.
    - A „Kimarad” rész sorolja fel az üzleti leírás 4. pontjának minden elemét.
