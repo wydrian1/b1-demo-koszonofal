@@ -24,7 +24,7 @@ claude --version
 ## Indulás
 
 ```bash
-git clone https://github.com/wydrian1/b1-demo-koszonofal.git kudos
+git clone https://github.com/wydrian1/b1-demo-kudos.git kudos
 cd kudos
 claude
 ```
