@@ -23,7 +23,7 @@ claude --version
 ## Indulás
 
 ```bash
-git clone <repo-url> koszonofal
+git clone https://github.com/wydrian1/b1-demo-koszonofal.git koszonofal
 cd koszonofal
 claude
 ```
