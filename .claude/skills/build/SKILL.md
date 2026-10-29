@@ -15,7 +15,19 @@ Ha fent nem szerepel story-azonosító, vagy nem találod a specben, kérdezd me
 1. A `SPEC.md` elején `Státusz: JÓVÁHAGYVA` áll. Ha nem, **állj meg**, és kérd a jóváhagyást (1. kapu).
 2. Keresd ki a story sorát a spec „Storyk és szállítási sorrend” részéből: a célját, az EK-it és a „Kész, ha…” feltételt.
 3. Nézd meg a `HALADAS.md`-t (ha létezik). Ha egy korábbi story még nincs kész, és ez a story épít rá, szólj, és kérdezd meg, hogy így is folytassuk-e.
-4. Vegyél fel egy **feladatlistát** a beépített todo/feladatlista eszközzel: egy sor a tesztekre, utána **EK-nként** egy-egy sor, a végén egy sor a teljes tesztfuttatásra. Írd ki egy mondatban: `▶ S2 – <story címe> · EK-05…EK-11`.
+4. **Mielőtt bármit írnál, mutasd be röviden a storyt** (legfeljebb 8–10 sor), hogy a felhasználó tudja, mi következik:
+
+   ```markdown
+   ▶ S2 – Saját köszöneteim
+
+   Felhasználói történet: Munkatársként vissza akarom keresni a kapott és küldött köszöneteimet, hogy …
+   Mi készül el: kapott és küldött lista darabszámmal · keresés · kategória- és időszakszűrő
+   EK-k: EK-08 (kapott lista) · EK-09 (küldött lista) · EK-10 (keresés) · EK-11 (szűrők)
+   Kész, ha: Farkas Júlia a „Kapott” listában látja Horváth Anna köszönetét, és rá tud keresni.
+   ```
+
+   Az EK-knál elég egy-két szavas címke. A szöveget a spec „Storyk” sorából és az EK-kból állítsd össze, ne találj ki újat.
+5. Ezután vegyél fel egy **feladatlistát** a beépített todo/feladatlista eszközzel: egy sor a tesztekre, utána **EK-nként** egy-egy sor, a végén egy sor a teljes tesztfuttatásra.
 
 ## 1. Tesztek (piros)
 
