@@ -16,7 +16,13 @@ Ez a skill **csak dokumentumot** készít. Kódot és tesztet nem írsz, amíg a
    - Rövid fejlécet (header) adj minden kérdésnek, pl. „Rendezés”, „B-1 határeset”.
    - Ne adj „Egyéb” opciót, azt a felület magától hozzáadja.
    - Ha az eszköz nem érhető el, akkor tedd fel a kérdéseket számozott listában, mindegyikhez javasolt alapértelmezéssel.
-3. A válaszok után írd meg a `SPEC.md`-t **pontosan a sablon szerkezetében**:
+3. A válaszok után írd meg a `SPEC.md`-t **szakaszonként, látható haladással**, ne egyetlen nagy fájlírással (különben a felhasználó percekig csak egy pörgő jelzőt lát):
+   - Először vegyél fel egy **feladatlistát** a beépített todo/feladatlista eszközzel, a sablon szakaszaival (1. Cél … 10. Változásnapló). Így a felületen látszik, hol tartasz.
+   - Hozd létre a `SPEC.md` **vázát**: a fejléc (státusz, verzió, dátum) és a szakaszcímek, a szakaszok helyén `(készül…)` jelöléssel.
+   - Ezután **szakaszonként** töltsd ki egy-egy kis szerkesztéssel. Minden szakasz előtt írj ki egy rövid státuszsort, pl. `✍️ 4/10 – Adatmodell`, utána pedig pipáld ki a feladatlistában.
+   - A hosszú részt (Elfogadási kritériumok) 3–5 EK-s adagokban írd, az adagok között egy-egy státuszsorral (pl. `✍️ 7/10 – EK-01…EK-05`).
+
+   Tartalmi elvárások, **pontosan a sablon szerkezetében**:
    - `Státusz: TERVEZET`, `Verzió: 1.0`, mai dátum.
    - A „Kimarad” rész sorolja fel az üzleti leírás 4. pontjának minden elemét.
    - Üzleti szabályok: `SZ-01`, `SZ-02`, … számozással.
@@ -32,7 +38,7 @@ Ez a skill **csak dokumentumot** készít. Kódot és tesztet nem írsz, amíg a
 ## Változáskérés (ha már van `SPEC.md`)
 
 1. Olvasd el a jelenlegi `SPEC.md`-t és a kérést. Ha a kérés ütközik a „Kimarad” résszel, mondd ki, és kérdezd meg, hogy a hatókört is bővítsük-e.
-2. Módosítsd a specet:
+2. Módosítsd a specet **célzott, kis szerkesztésekkel** (ne írd újra az egész fájlt), mindegyik előtt egy rövid státuszsorral:
    - növeld a verziót (pl. 1.0 → 1.1),
    - a státuszt állítsd vissza `TERVEZET`-re,
    - az új vagy módosult szabályokat és EK-kat jelöld (pl. „(1.1-ben új)”), a meglévő azonosítókat ne számozd át,

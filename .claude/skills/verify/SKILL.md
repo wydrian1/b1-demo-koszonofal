@@ -13,7 +13,7 @@ description: Lefuttatja az összes tesztet, és BIZONYITEK.md-t készít arról,
    ```
 
 3. Gyűjtsd ki a `SPEC.md`-ből az összes EK-azonosítót, a tesztekből pedig, hogy melyik teszt melyik EK-ra hivatkozik.
-4. Készítsd el a `BIZONYITEK.md`-t ebben a szerkezetben:
+4. Készítsd el a `BIZONYITEK.md`-t **szakaszonként, látható haladással**: előbb a váz a szakaszcímekkel, utána egyenként töltsd ki őket kis szerkesztésekkel, mindegyik előtt egy rövid státuszsorral (pl. `🧾 2/5 – Kritériumok lefedettsége`). A szerkezet:
 
    ```markdown
    # Bizonyíték – Köszönőfal
