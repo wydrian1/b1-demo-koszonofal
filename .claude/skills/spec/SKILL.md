@@ -33,7 +33,7 @@ Ez a skill **csak dokumentumot** készít. Kódot és tesztet nem írsz, amíg a
    - hány szabály és hány EK készült,
    - melyik üzleti elvárást melyik EK fedi le (rövid táblázat),
    - a nyitott kérdéseket, ha maradt ilyen.
-5. **Állj meg.** Kérd meg a felhasználót, hogy nézze át a `SPEC.md`-t, és ha rendben van, **saját maga** írja át a státuszt `JÓVÁHAGYVA`-ra (ez az 1. kapu). A státuszt te ne módosítsd.
+5. **Állj meg.** Kérd meg a felhasználót, hogy nézze át a `SPEC.md`-t, és ha rendben van, **saját maga** írja át a státuszt `JÓVÁHAGYVA`-ra (ez az 1. kapu). A státuszt te ne módosítsd. **A jóváhagyás után se kezdj bele magadtól a tesztírásba:** nyugtázd, és várd meg, hogy a felhasználó kifejezetten kérje (lásd a `CLAUDE.md` „Egyszerre egy fázis” részét).
 
 ## Változáskérés (ha már van `SPEC.md`)
 
