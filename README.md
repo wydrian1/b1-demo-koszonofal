@@ -5,6 +5,7 @@ Egy kis belső „köszönőfal” alkalmazást építünk **a saját gépen, WS
 Nem „vibe coding”: előbb **specifikáció**, utána **tesztek**, és csak ezután **kód**, két emberi jóváhagyási ponttal.
 
 > Az alkalmazás csak helyben fut, kitalált adatokkal. Nincs AD, e-mail, szerver vagy deploy.
+> A repót csak **letöltöd**, a munkád a saját gépeden marad. Ide **nem kell visszacommitolni** semmit.
 
 **📘 Lépésről lépésre útmutató: [Köszönőfal lab guide](https://wydrian1.github.io/b1training/lab/)**
 

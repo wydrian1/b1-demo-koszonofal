@@ -51,6 +51,13 @@ data/               # bemeneti adatok (CSAK OLVASHATÓ)
 
 Az üzleti logika (ki kinek a vezetője, ki mit láthat) legyen a webes rétegtől független, külön tesztelhető modulban.
 
+## Minden csak helyben
+
+- A repót mindenki **csak letölti** (`git clone`) kiindulásnak. A munka eredménye (spec, tesztek, kód, bizonyíték) **a saját gépen marad**, a közös repóba **semmi nem kerül vissza**.
+- **Soha ne futtass `git push`-t**, ne hozz létre pull requestet, és ne adj hozzá vagy módosíts git remote-ot. Ha a felhasználó mégis ilyet kér, emlékeztesd erre a szabályra.
+- Helyi `git commit` mentési pontként rendben van, de csak akkor, ha a felhasználó kéri.
+- Az alkalmazás **csak helyben fut** (`localhost`). Ne konfigurálj távoli szervert, deployt vagy CI/CD-t.
+
 ## Tilalmak
 
 - A `data/` és a `docs/` mappát, valamint a `templates/` tartalmát **ne módosítsd**.
