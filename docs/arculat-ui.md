@@ -1,4 +1,4 @@
-# Felület és arculat – Köszönőfal
+# Felület és arculat – Kudos
 
 > Kötelező útmutató a felülethez. A cél egy **igényes, modern, belső vállalati webalkalmazás** a Raiffeisen színvilágában, ne egy „nyers HTML-űrlap”.
 > Minden külső függőség nélkül: saját CSS, vanilla JS, emoji vagy inline SVG ikonok, rendszerbetű. Nincs CDN, nincs webfont-letöltés.
@@ -46,7 +46,7 @@ A `static/` mappában egy közös CSS-fájl elején, CSS-változóként:
 
 ```text
 ┌───────────────────────────────────────────────────────────────┐
-│ ▰ Köszönőfal   Fal · Új köszönet · Saját · Csapat   🔔3  (HA)▾ │  ← sötét (Off Black) fejléc, sárga aktív menü-aláhúzás
+│ ▰ Kudos   Fal · Új köszönet · Saját · Csapat   🔔3  (HA)▾ │  ← sötét (Off Black) fejléc, sárga aktív menü-aláhúzás
 ├───────────────────────────────────────────────────────────────┤
 │  DEMO belépés: Horváth Anna · Fejlesztési Osztály   [Váltás]  │  ← vékony sárga sáv
 │                                                               │
@@ -62,7 +62,7 @@ A `static/` mappában egy közös CSS-fájl elején, CSS-változóként:
 - Tartalom max. szélesség 1200 px, középre igazítva, 24 px oldalsó margó (mobilon 16 px).
 - **Töréspontok:** ≥ 1024 px: 3 oszlopos kártyarács · 640–1023 px: 2 oszlop · < 640 px: 1 oszlop, és a fő menü **alsó tab-sávba** kerül (ikon + rövid felirat).
 - A fejléc lapozáskor is fent marad (sticky).
-- A logó helyett szöveges jel: egy kis sárga, ferde ék (parallelogramma) és a „Köszönőfal” felirat. **Ne használd a hivatalos Raiffeisen-logót.**
+- A logó helyett szöveges jel: egy kis sárga, ferde ék (parallelogramma) és a „Kudos” felirat. **Ne használd a hivatalos Raiffeisen-logót.**
 
 ## 3. Komponensek
 

@@ -1,4 +1,4 @@
-# Köszönőfal – szabályok Claude számára
+# Kudos – szabályok Claude számára
 
 Helyben futó demóalkalmazás, amelyben munkatársak köszönő üzenetet küldenek egymásnak, a vezetők pedig látják a csapatukhoz tartozó köszöneteket.
 A felhasználóval **magyarul** kommunikálj.
@@ -35,7 +35,7 @@ A munka fázisokra bomlik. **Mindig csak azt az egy fázist csináld, amit a fel
 - **Python 3.10+ standard library**: `http.server`, `sqlite3`, `json`, `unittest`, `html`, `urllib`.
 - **Külső csomag nem használható** (nincs `pip install`), és hálózati hívás vagy CDN sem (a céges proxy miatt, és hogy mindenkinél ugyanúgy fusson).
 - Felület: sima HTML, CSS és vanilla JavaScript a `static/` mappában, keretrendszer nélkül.
-- Adattárolás: SQLite fájl (`koszonofal.db`). Ez nem kerül a gitbe.
+- Adattárolás: SQLite fájl (`kudos.db`). Ez nem kerül a gitbe.
 - Indítás: `python3 app.py` → http://localhost:8000
 - Tesztek: `python3 -m unittest discover -s tests -v`
 
@@ -43,7 +43,7 @@ Javasolt szerkezet (a spec felülírhatja):
 
 ```text
 app.py              # belépési pont: szerver indítása
-koszonofal/         # üzleti logika (szervezet, üzenetek, értesítések, jogosultság)
+kudos/              # üzleti logika (szervezet, üzenetek, értesítések, jogosultság)
 static/             # HTML, CSS, JS
 tests/              # unittest tesztek, EK-azonosítókkal
 data/               # bemeneti adatok (CSAK OLVASHATÓ)

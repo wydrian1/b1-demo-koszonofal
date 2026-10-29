@@ -1,4 +1,4 @@
-# Üzleti leírás – Köszönőfal (demó változat)
+# Üzleti leírás – Kudos (demó változat)
 
 > Ez az eredeti, teljes körű „Belső Köszönő Üzenetküldő Webalkalmazás” igény **egyszerűsített, helyben futtatható** változata egy délutáni gyakorláshoz.
 > Ebből készül a `SPEC.md`. Ez a dokumentum az üzleti igényt írja le, nem a technikai megoldást.
@@ -80,7 +80,7 @@ A vezető is munkatárs, tehát ő is küldhet és kaphat köszönetet.
   - időszak szerinti szűrés (pl. elmúlt 7 nap, 30 nap, összes).
 
 ### 3.4. Közös fal
-- A kezdőoldal a **Köszönőfal**: az összes **nyilvános** köszönet, a legújabbal kezdve.
+- A kezdőoldal a **Kudos fal**: az összes **nyilvános** köszönet, a legújabbal kezdve.
 - Kategória szerint szűrhető.
 - Privát köszönet itt soha nem jelenik meg, senkinek.
 

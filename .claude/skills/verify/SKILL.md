@@ -16,7 +16,7 @@ description: Lefuttatja az összes tesztet, és BIZONYITEK.md-t készít arról,
 4. Készítsd el a `BIZONYITEK.md`-t **szakaszonként, látható haladással**: előbb a váz a szakaszcímekkel, utána egyenként töltsd ki őket kis szerkesztésekkel, mindegyik előtt egy rövid státuszsorral (pl. `🧾 2/5 – Kritériumok lefedettsége`). A szerkezet:
 
    ```markdown
-   # Bizonyíték – Köszönőfal
+   # Bizonyíték – Kudos
 
    Spec verzió: X.Y · Dátum: ÉÉÉÉ-HH-NN · Tesztek: N db, ebből zöld: M
 

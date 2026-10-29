@@ -1,13 +1,13 @@
-# Köszönőfal – spec-driven demó Claude Code-dal
+# Kudos – spec-driven demó Claude Code-dal
 
 Gyakorló feladat a B-1 vezetői AI-workshop délutáni részéhez.
-Egy kis belső „köszönőfal” alkalmazást építünk **a saját gépen, WSL-ben**, Claude Code-dal.
+Egy kis belső köszönetküldő alkalmazást, a **Kudos**-t, építünk **a saját gépen, WSL-ben**, Claude Code-dal.
 Nem „vibe coding”: előbb **specifikáció**, utána **tesztek**, és csak ezután **kód**, két emberi jóváhagyási ponttal.
 
 > Az alkalmazás csak helyben fut, kitalált adatokkal. Nincs AD, e-mail, szerver vagy deploy.
 > A repót csak **letöltöd**, a munkád a saját gépeden marad. Ide **nem kell visszacommitolni** semmit.
 
-**📘 Lépésről lépésre útmutató: [Köszönőfal lab guide](https://wydrian1.github.io/b1training/lab/)**
+**📘 Lépésről lépésre útmutató: [Kudos lab guide](https://wydrian1.github.io/b1training/lab/)**
 
 ## Előfeltételek
 
@@ -24,8 +24,8 @@ claude --version
 ## Indulás
 
 ```bash
-git clone https://github.com/wydrian1/b1-demo-koszonofal.git koszonofal
-cd koszonofal
+git clone https://github.com/wydrian1/b1-demo-koszonofal.git kudos
+cd kudos
 claude
 ```
 

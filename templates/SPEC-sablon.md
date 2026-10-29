@@ -1,4 +1,4 @@
-# SPEC – Köszönőfal
+# SPEC – Kudos
 
 Státusz: TERVEZET
 Verzió: 1.0
