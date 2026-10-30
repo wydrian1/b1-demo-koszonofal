@@ -57,7 +57,8 @@ Ez a skill **csak dokumentumot** készít. Kódot és tesztet nem írsz, amíg a
      ```
 
    - a nyitott kérdéseket, ha maradt ilyen.
-6. **Állj meg.** Kérd meg a felhasználót, hogy nézze át a `SPEC.md`-t, és ha rendben van, **saját maga** írja át a státuszt `JÓVÁHAGYVA`-ra (ez az 1. kapu). A státuszt te ne módosítsd. **A jóváhagyás után se kezdj bele magadtól a tesztírásba:** nyugtázd, és mondd meg, hogy a következő lépés a `/build S1`, de várd meg, hogy a felhasználó elindítsa (lásd a `CLAUDE.md` „Egyszerre egy fázis” részét).
+6. **Feladatlista-ellenőrzés:** a feladatlistában nem maradhat folyamatban vagy függőben lévő sor. Ami elkészült, zárd le, ami nem, azt nevezd meg. Írj ki egy sort, pl. `☑️ Feladatlista: 13/13 lezárva`.
+7. **Állj meg.** Kérd meg a felhasználót, hogy nézze át a `SPEC.md`-t, és ha rendben van, **saját maga** írja át a státuszt `JÓVÁHAGYVA`-ra (ez az 1. kapu). A státuszt te ne módosítsd. **A jóváhagyás után se kezdj bele magadtól a tesztírásba:** nyugtázd, és mondd meg, hogy a következő lépés a `/build S1`, de várd meg, hogy a felhasználó elindítsa (lásd a `CLAUDE.md` „Egyszerre egy fázis” részét).
 
 ## Változáskérés (ha már van `SPEC.md`)
 

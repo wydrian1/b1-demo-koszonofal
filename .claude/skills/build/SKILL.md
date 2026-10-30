@@ -29,6 +29,7 @@ Ha fent nem szerepel story-azonosító, vagy nem találod a specben, kérdezd me
 
    Az EK-knál elég egy-két szavas címke. A szöveget a spec „Storyk” sorából és az EK-kból állítsd össze, ne találj ki újat.
 6. Ezután vegyél fel egy **feladatlistát** a beépített todo/feladatlista eszközzel: egy sor a unit tesztekre, egy az E2E tesztre, utána **EK-nként** egy-egy sor, a végén egy sor a teljes tesztfuttatásra.
+   - **Minden feladatot azonnal zárj le**, amint elkészült, ne gyűjtsd őket a végére. Egyszerre csak egy feladat legyen folyamatban.
 
 ## 1. Tesztek (piros)
 
@@ -54,7 +55,11 @@ Ezután **ne állj meg**, folytasd az építéssel. A tesztek megírása és az 
 
 ## 3. Lezárás és megállás
 
-1. Frissítsd (vagy hozd létre) a `HALADAS.md`-t. Egy sor storynként:
+1. **Feladatlista-ellenőrzés.** Nézd végig a feladatlistát: nem maradhat **folyamatban** vagy **függőben** lévő feladat.
+   - Ami valójában elkészült, azt zárd le.
+   - Ami nem készült el (pl. egy piros teszt miatt), azt ne zárd le csendben: nevezd meg az összefoglalóban, és mondd meg, miért maradt nyitva.
+   - Írj ki egy sort az eredményről, pl. `☑️ Feladatlista: 9/9 lezárva`.
+2. Frissítsd (vagy hozd létre) a `HALADAS.md`-t. Egy sor storynként:
 
    ```markdown
    | Story | Dátum | EK-k | Unit (zöld / összes) | E2E (zöld / összes) | Állapot |
@@ -62,10 +67,10 @@ Ezután **ne állj meg**, folytasd az építéssel. A tesztek megírása és az 
    | S2 | ÉÉÉÉ-HH-NN | EK-05…EK-11 | 14 / 14 | 2 / 2 | kész |
    ```
 
-2. Írd ki a felhasználónak röviden:
+3. Írd ki a felhasználónak röviden:
    - mi készült el ebben a storyban,
    - a tesztek eredményét (story és összes, unit és E2E külön),
    - hogy az E2E tesztet látható böngészőben is végignézheti: `HEADED=1 .venv/bin/python -m unittest discover -s tests/e2e -v` (WSLg-vel Windows 11-en külön ablakban nyílik meg),
    - **hogyan nézze meg a böngészőben**: 3–5 lépéses, konkrét kattintós ellenőrzés a „Kész, ha…” feltétel alapján, a `data/munkatarsak.json` neveivel (az alkalmazás indítása: `python3 app.py`, majd http://localhost:8000),
    - mi a következő story (pl. „Következő: `/build S3` – Értesítések”).
-3. **Állj meg.** A következő storyba csak akkor kezdj, ha a felhasználó elindítja.
+4. **Állj meg.** A következő storyba csak akkor kezdj, ha a felhasználó elindítja.
