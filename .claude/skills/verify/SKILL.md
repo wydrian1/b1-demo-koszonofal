@@ -19,6 +19,8 @@ description: Lefuttatja az összes tesztet, és BIZONYITEK.md-t készít arról,
    ```markdown
    # Bizonyíték – Kudos
 
+   Elfogadás: FÜGGŐBEN
+
    Spec verzió: X.Y · Dátum: ÉÉÉÉ-HH-NN · Unit: N db, ebből zöld: M · E2E: K db, ebből zöld: L
 
    ## Kritériumok lefedettsége
@@ -46,4 +48,5 @@ description: Lefuttatja az összes tesztet, és BIZONYITEK.md-t készít arról,
    ```
 
 5. Ha bármelyik teszt piros, vagy van lefedetlen EK, **ne nevezd késznek a munkát**: írd ki, mi hiányzik, és kérdezd meg, hogy javítsd-e.
-6. Ha minden zöld, kérd meg a felhasználót, hogy olvassa el a `BIZONYITEK.md`-t, járja végig a kézi forgatókönyvet (`python3 app.py`, majd http://localhost:8000), és ő döntsön az elfogadásról (2. kapu).
+6. Ha minden zöld, kérd meg a felhasználót, hogy olvassa el a `BIZONYITEK.md`-t, járja végig a kézi forgatókönyvet (http://localhost:8000), és ő döntsön az elfogadásról (2. kapu). Ha elfogadja, **saját maga** írja át az `Elfogadás: FÜGGŐBEN` sort `Elfogadás: ELFOGADVA`-ra. Ezt te ne módosítsd. Mondd meg, hogy elfogadás után a következő lépés a dokumentáció (`/docs`), de ne kezdj bele.
+7. Ha a `BIZONYITEK.md` már létezett, és újra futtatod (pl. javítás után), az `Elfogadás` sor mindig `FÜGGŐBEN`-re álljon vissza: egy korábbi elfogadás nem vonatkozik a megváltozott kódra.

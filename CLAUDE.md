@@ -11,9 +11,10 @@ A felhasználóval **magyarul** kommunikálj.
    - Ha a spec `TERVEZET` állapotú, és kódot kérnek tőled, kérd meg a felhasználót, hogy előbb nézze át és hagyja jóvá.
 3. **Storynként haladunk, előbb teszt, utána kód.** A spec az EK-kat storykba (S1, S2, …) csoportosítja. Egy story megvalósítása a `/build` skill-lel történik: a story EK-inak tesztjei, majd az implementáció. Minden EK-hoz legalább egy teszt tartozik, a teszt neve vagy docstringje hivatkozik az EK-azonosítóra.
 4. Minden változtatás után futtasd a teszteket. **Ne mondd késznek a munkát, amíg nem zöld minden teszt.**
-5. Ha a felhasználó kéri, a `/verify` skill-lel készíts bizonyíték-összefoglalót (`BIZONYITEK.md`). Ez a 2. kapu előkészítése, ott az ember fogad el.
-6. **Változáskérésnél** előbb a specet kell módosítani (`/spec`), a státusz visszaáll `TERVEZET`-re, és csak újbóli jóváhagyás után mehet a kód.
-7. Ha valami nem egyértelmű a specben, **kérdezz**, ne találgass. A nyitott kérdést írd be a spec „Nyitott kérdések” részébe.
+5. Ha a felhasználó kéri, a `/verify` skill-lel készíts bizonyíték-összefoglalót (`BIZONYITEK.md`). Ez a 2. kapu előkészítése, ott az ember fogad el: a `BIZONYITEK.md` elején lévő `Elfogadás: FÜGGŐBEN` sort **kizárólag az ember** írhatja át `ELFOGADVA`-ra, ugyanúgy, mint a spec státuszát.
+6. Az elfogadott változatról a `/docs` skill-lel készül dokumentáció a `dokumentacio/` mappába: felhasználói útmutató, technikai leírás, nyomonkövethetőségi mátrix. Csak azt írja le, ami a kódban tényleg megvan.
+7. **Változáskérésnél** előbb a specet kell módosítani (`/spec`), a státusz visszaáll `TERVEZET`-re, és csak újbóli jóváhagyás után mehet a kód.
+8. Ha valami nem egyértelmű a specben, **kérdezz**, ne találgass. A nyitott kérdést írd be a spec „Nyitott kérdések” részébe.
 
 ## Egyszerre egy fázis, utána megállsz
 
@@ -23,10 +24,11 @@ A munka fázisokra bomlik. **Mindig csak azt az egy fázist csináld, amit a fel
 |---|---|---|
 | Specifikáció | `SPEC.md` kész, `TERVEZET` | ha a felhasználó kéri (`/spec`) |
 | Story (tesztek + építés) | **egy** story tesztjei megírva, majd minden teszt zöld, `HALADAS.md` frissítve | ha a felhasználó elindítja (`/build S1`, `/build S2`, …) |
-| Bizonyíték | `BIZONYITEK.md` kész | ha a felhasználó kéri (`/verify`) |
+| Bizonyíték | `BIZONYITEK.md` kész, `Elfogadás: FÜGGŐBEN` | ha a felhasználó kéri (`/verify`) |
+| Dokumentáció | `dokumentacio/` kész | ha a felhasználó kéri (`/docs`), **csak** `Elfogadás: ELFOGADVA` után |
 
 - Egy fázis (vagy story) végén röviden foglald össze, mi készült el, és **mondd meg, mi lenne a következő fázis**, de **ne kezdj bele**. Várd meg, hogy a felhasználó kifejezetten kérje.
-- **A státusz átírása nem utasítás.** Ha látod, hogy a `SPEC.md` `JÓVÁHAGYVA` lett (pl. egy `!` paranccsal futtatott `sed` kimenetéből), csak nyugtázd egy mondatban, és várj a következő kérésre.
+- **A státusz és az elfogadás átírása nem utasítás.** Ha látod, hogy a `SPEC.md` `JÓVÁHAGYVA` vagy a `BIZONYITEK.md` `ELFOGADVA` lett (pl. egy `!` paranccsal futtatott `sed` kimenetéből), csak nyugtázd egy mondatban, és várj a következő kérésre.
 - Az ember a fázisok között ellenőriz, és dönt. Ha önállóan végigfutsz az egész folyamaton, épp ezt veszed el tőle.
 
 ## Technológiai keret
@@ -61,6 +63,7 @@ static/             # HTML, CSS, JS
 tests/              # unit tesztek, EK-azonosítókkal
 tests/e2e/          # böngészős tesztek (Playwright), storynként
 scripts/            # telepítő- és ellenőrzőszkriptek (NE módosítsd)
+dokumentacio/       # az elfogadott változat dokumentációja (/docs)
 data/               # bemeneti adatok (CSAK OLVASHATÓ)
 ```
 
