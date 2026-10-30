@@ -67,10 +67,16 @@ Ezután **ne állj meg**, folytasd az építéssel. A tesztek megírása és az 
    | S2 | ÉÉÉÉ-HH-NN | EK-05…EK-11 | 14 / 14 | 2 / 2 | kész |
    ```
 
-3. Írd ki a felhasználónak röviden:
+3. **A helyi szerver frissítése.** Az alkalmazás nem tölti újra magától a kódot, ezért a story végén indítsd (újra) a 8000-es porton, hogy a felhasználó a böngészőben már az új változatot lássa:
+   1. Nézd meg, fut-e valami a porton: `lsof -ti tcp:8000 -sTCP:LISTEN`.
+   2. Ha fut, ellenőrizd, hogy **ennek a projektnek** az alkalmazása-e: a parancssora (`ps -o args= -p <PID>`) az `app.py`-t futtatja, **és** a munkakönyvtára (`readlink /proc/<PID>/cwd`) megegyezik a projekt mappájával (`pwd`). Csak ha mindkettő igaz, állítsd le (`kill <PID>`), és várd meg, amíg a port felszabadul. Ha **más program vagy egy másik mappából futó `app.py`** foglalja a portot, ne állítsd le: írd ki, mi fut ott és honnan, és kérdezd meg a felhasználót.
+   3. Indítsd el a háttérben, úgy, hogy a munkamenet után is fusson: `nohup setsid python3 app.py > app.log 2>&1 &`
+   4. Várd meg, amíg válaszol (legfeljebb kb. 10 másodpercig): `curl -s -o /dev/null -w "%{http_code}" http://localhost:8000/`. Ha nem indul el, nézd meg az `app.log` végét, írd ki a hibát, és kérdezd meg a felhasználót, hogyan tovább. A `kudos.db`-t ne töröld magadtól.
+4. Írd ki a felhasználónak röviden:
    - mi készült el ebben a storyban,
    - a tesztek eredményét (story és összes, unit és E2E külön),
    - hogy az E2E tesztet látható böngészőben is végignézheti: `HEADED=1 .venv/bin/python -m unittest discover -s tests/e2e -v` (WSLg-vel Windows 11-en külön ablakban nyílik meg),
-   - **hogyan nézze meg a böngészőben**: 3–5 lépéses, konkrét kattintós ellenőrzés a „Kész, ha…” feltétel alapján, a `data/munkatarsak.json` neveivel (az alkalmazás indítása: `python3 app.py`, majd http://localhost:8000),
+   - **a szerver állapotát egy sorban**, pl. `🌐 A szerver újraindítva az új kóddal: http://localhost:8000 (PID 12345, napló: app.log). Frissítsd a böngészőt (Ctrl+F5).` Ha nem futott, `elindítva` szerepeljen, ha nem sikerült, a hiba oka,
+   - **hogyan nézze meg a böngészőben**: 3–5 lépéses, konkrét kattintós ellenőrzés a „Kész, ha…” feltétel alapján, a `data/munkatarsak.json` neveivel,
    - mi a következő story (pl. „Következő: `/build S3` – Értesítések”).
-4. **Állj meg.** A következő storyba csak akkor kezdj, ha a felhasználó elindítja.
+5. **Állj meg.** A következő storyba csak akkor kezdj, ha a felhasználó elindítja.
