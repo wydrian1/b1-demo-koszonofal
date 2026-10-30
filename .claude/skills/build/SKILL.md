@@ -28,8 +28,6 @@ Ha fent nem szerepel story-azonosító, vagy nem találod a specben, kérdezd me
    ```
 
    Az EK-knál elég egy-két szavas címke. A szöveget a spec „Storyk” sorából és az EK-kból állítsd össze, ne találj ki újat.
-6. Ezután vegyél fel egy **feladatlistát** a beépített todo/feladatlista eszközzel: egy sor a unit tesztekre, egy az E2E tesztre, utána **EK-nként** egy-egy sor, a végén egy sor a teljes tesztfuttatásra.
-   - **Minden feladatot azonnal zárj le**, amint elkészült, ne gyűjtsd őket a végére. Egyszerre csak egy feladat legyen folyamatban.
 
 ## 1. Tesztek (piros)
 
@@ -42,7 +40,7 @@ Ezután **ne állj meg**, folytasd az építéssel. A tesztek megírása és az 
 
 ## 2. Építés (zöld)
 
-1. Implementálj **EK-ról EK-ra**. Minden EK előtt írj ki egy rövid státuszsort (pl. `🔨 EK-07 – értesítés a B-1 vezetőnek`), utána futtasd a story tesztjeit, és pipáld ki a feladatlistában.
+1. Implementálj **EK-ról EK-ra**. Minden EK előtt írj ki egy rövid státuszsort (pl. `🔨 EK-07 – értesítés a B-1 vezetőnek`), utána futtasd a story tesztjeit.
 2. Csak azt építsd meg, ami **ehhez a storyhoz** kell. Ne kezdj bele a következő story funkcióiba, akkor sem, ha „kézre esnek”.
 3. A felületet a `docs/arculat-ui.md` szerint építsd.
 4. Ha a unit tesztek zöldek, futtasd a story **E2E tesztjét** is, és javíts, amíg az is zöld. Az E2E hibánál nézd meg a hibaüzenetet, és ha kell, készíts képernyőképet a hiba helyén (`page.screenshot(path="test-results/…png")`), hogy lásd, mi jelent meg.
@@ -55,10 +53,7 @@ Ezután **ne állj meg**, folytasd az építéssel. A tesztek megírása és az 
 
 ## 3. Lezárás és megállás
 
-1. **Feladatlista-ellenőrzés.** Nézd végig a feladatlistát: nem maradhat **folyamatban** vagy **függőben** lévő feladat.
-   - Ami valójában elkészült, azt zárd le.
-   - Ami nem készült el (pl. egy piros teszt miatt), azt ne zárd le csendben: nevezd meg az összefoglalóban, és mondd meg, miért maradt nyitva.
-   - Írj ki egy sort az eredményről, pl. `☑️ Feladatlista: 9/9 lezárva`.
+1. **EK-ellenőrzés.** Írj ki egy sort arról, hány EK készült el a storyból, pl. `☑️ EK-k: 6/6 kész`. Ami nem készült el (pl. egy piros teszt miatt), azt ne hallgasd el: nevezd meg az összefoglalóban, és mondd meg, miért maradt nyitva.
 2. Frissítsd (vagy hozd létre) a `HALADAS.md`-t. Egy sor storynként:
 
    ```markdown

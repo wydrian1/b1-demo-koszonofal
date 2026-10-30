@@ -20,9 +20,8 @@ Ez a skill **csak dokumentumot** készít. Kódot és tesztet nem írsz, amíg a
    - **Közvetlenül a válaszok után, mielőtt a tartalmon gondolkodnál**, írj ki egy nyugtázó sort a döntésekkel, pl. `✅ Rögzítettem: rendezés dátum szerint, … – indul a SPEC.md írása (11 szakasz).` Ez legyen az első, amit a felhasználó lát.
    - Utána írj ki egy **látható mini-tervet** (10–15 sor): a tervezett üzleti szabályok rövid címeit (SZ-01…) és a storyk listáját (S1… egy-egy sorban, MVP jelöléssel). Ez a váz, amihez a szakaszok igazodnak, és a felhasználó már itt szólhat, ha rossz az irány.
    - **A részleteket ne tervezd meg előre fejben.** A mini-terv után minden szakaszt közvetlenül a megírása előtt, röviden gondolj végig. Az előre, egyben, csendben végiggondolt spec a legfőbb oka a hosszú várakozásnak. A konzisztenciát a 4. lépés ellenőrzése biztosítja.
-   - Ezután rögtön vegyél fel egy **feladatlistát** a beépített todo/feladatlista eszközzel, a sablon szakaszaival (1. Cél … 11. Változásnapló), a végén egy `🔎 Konzisztencia-ellenőrzés` sorral. Így a felületen látszik, hol tartasz.
    - Hozd létre a `SPEC.md` **vázát**: a fejléc (státusz, verzió, dátum) és a szakaszcímek, a szakaszok helyén `(készül…)` jelöléssel.
-   - Ezután **szakaszonként** töltsd ki egy-egy kis szerkesztéssel. Minden szakasz előtt írj ki egy rövid státuszsort, pl. `✍️ 4/11 – Adatmodell`, utána pedig pipáld ki a feladatlistában.
+   - Ezután **szakaszonként** töltsd ki egy-egy kis szerkesztéssel. Minden szakasz előtt írj ki egy rövid státuszsort, pl. `✍️ 4/11 – Adatmodell`. Így a felhasználó látja, hol tartasz.
    - A hosszú részt (Elfogadási kritériumok) 3–5 EK-s adagokban írd, az adagok között egy-egy státuszsorral (pl. `✍️ 7/11 – EK-01…EK-05`).
 
    Tartalmi elvárások, **pontosan a sablon szerkezetében**:
@@ -57,8 +56,7 @@ Ez a skill **csak dokumentumot** készít. Kódot és tesztet nem írsz, amíg a
      ```
 
    - a nyitott kérdéseket, ha maradt ilyen.
-6. **Feladatlista-ellenőrzés:** a feladatlistában nem maradhat folyamatban vagy függőben lévő sor. Ami elkészült, zárd le, ami nem, azt nevezd meg. Írj ki egy sort, pl. `☑️ Feladatlista: 13/13 lezárva`.
-7. **Állj meg.** Kérd meg a felhasználót, hogy nézze át a `SPEC.md`-t, és ha rendben van, **saját maga** írja át a státuszt `JÓVÁHAGYVA`-ra (ez az 1. kapu). A státuszt te ne módosítsd. **A jóváhagyás után se kezdj bele magadtól a tesztírásba:** nyugtázd, és mondd meg, hogy a következő lépés a `/build S1`, de várd meg, hogy a felhasználó elindítsa (lásd a `CLAUDE.md` „Egyszerre egy fázis” részét).
+6. **Állj meg.** Kérd meg a felhasználót, hogy nézze át a `SPEC.md`-t, és ha rendben van, **saját maga** írja át a státuszt `JÓVÁHAGYVA`-ra (ez az 1. kapu). A státuszt te ne módosítsd. **A jóváhagyás után se kezdj bele magadtól a tesztírásba:** nyugtázd, és mondd meg, hogy a következő lépés a `/build S1`, de várd meg, hogy a felhasználó elindítsa (lásd a `CLAUDE.md` „Egyszerre egy fázis” részét).
 
 ## Változáskérés (ha már van `SPEC.md`)
 
